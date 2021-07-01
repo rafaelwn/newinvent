@@ -1,0 +1,16 @@
+﻿@using GridMvc.Html
+
+@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.ClienteViewModel>
+
+<br/>
+<br/>
+<br/>
+
+@Html.Grid(Model).Columns(columns =>
+           {
+               columns.Add(clientes => clientes.ClienteId).Titled("Id").SetWidth(110).Filterable(true);
+               columns.Add(clientes => clientes.Nome).Titled("Nome").SetWidth(110).Sortable(true);
+               columns.Add(clientes => clientes.Sobrenome).SetWidth(110);
+               columns.Add(clientes => clientes.Email).Titled("E-mail").SetWidth(110);
+           }).WithPaging(20)
+

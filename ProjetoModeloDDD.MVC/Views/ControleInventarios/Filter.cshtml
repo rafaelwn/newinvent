@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.Inventario.ControleInventarioViewModel>
+@Styles.Render("~/Content/webgrid_style.css")
+
+<div style="width:120%" id="grid_ajax">
+    @{
+
+        var grid = new WebGrid(Model, rowsPerPage: 10, ajaxUpdateContainerId: "grid_ajax");
+
+        @grid.GetHtml(
+            tableStyle: "webgrid",
+            fillEmptyRows: false,
+            headerStyle: "webgrid-header",
+            alternatingRowStyle: "webgrid-alternating-row",
+            rowStyle: "webgrid-row-style",
+            footerStyle: "webgrid-footer",
+            mode: WebGridPagerModes.All,
+            firstText: "<< Primeiro",
+            previousText: "< Anterior",
+            nextText: "Próximo >",
+            lastText: "Último >>",
+            columns: new[] {
+                grid.Column("ControleInventarioId", header: "Id", style:" width: 150px; ", canSort:true),
+                grid.Column("DataInicio", header: "Data Início", canSort:true),
+                grid.Column("DataFim", header: "Data Fim", canSort:true),
+                grid.Column("UsuarioEmail", header: "Usuario", canSort:true),
+                grid.Column("ControleInventarioId", header: "Ação", canSort:false,
+                    format: @<text>
+                    @Html.Raw("   <a href='/ControleInventarios/Details?id=" + item.ControleInventarioId + "' > <img src='/Images/png/eye-3x.png' title='Deleta'/> </a>")
+                    @Html.Raw("   <a href='/ControleInventarios/Edit?id=" + item.ControleInventarioId + "' > <img src='/Images/png/pencil-3x.png' title='Edita'/> </a>")
+                    @Html.Raw("   <a href='/ControleInventarios/Delete?id=" + item.ControleInventarioId + "' > <img src='/Images/png/circle-x-3x.png' title='Deleta'/> </a>")
+                    </text>
+                )
+
+            }
+                 )
+    }
+</div>

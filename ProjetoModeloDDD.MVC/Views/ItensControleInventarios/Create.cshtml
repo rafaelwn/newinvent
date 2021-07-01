@@ -1,0 +1,123 @@
+﻿@model ProjetoModeloDDD.MVC.ViewModels.Inventario.ItemControleInventarioViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create v.1.2</title>
+    @Styles.Render("~/Content/Site.css")    
+    @Scripts.Render("~/Scripts/jquery-1.10.2.min.js")
+</head>
+
+<body style="padding-top: 2px; font-family:Verdana, Geneva, Tahoma, sans-serif">
+
+    <script type="text/javascript">
+
+        $(window).load(function () {
+            $("#strCodigoEan").val("");
+            $("#strCodigoEan").focus();
+        });
+
+        function submitColeta() {
+            $("form").submit();
+        }
+
+        $(document).ready(function () {
+
+            $("#Identificador").keypress(function (event) {
+                if (event.which == 13) {
+                    $("#strCodigoEan").val("");
+                    $("#strCodigoEan").focus();
+                }
+            });
+
+            $("#strCodigoEan").keypress(function (event) {
+                if (event.which == 13) {
+                    $("#Quantidade").val("");
+                    $("#Quantidade").focus();
+                }
+            });
+
+            $("#Quantidade").keypress(function (event) {
+                if (event.which == 13) {
+                    submitColeta();
+                }
+            });       
+
+        });
+
+    </script>
+
+    <center>
+        <img src="~/images/inventario/new_invent.png" width="80" height="50" /> <br />
+    </center>
+    Última coleta v1.3<br />
+    Produto: <b> @ViewBag.DescricaoProduto</b> <br />
+    Quantidade: <b> @ViewBag.QuantidadeColeta</b> 
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()       
+        
+        <hr />
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-horizontal">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.EmailUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.EmailUsuario, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.EmailUsuario, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Identificador, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Identificador, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Identificador, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Produto (Cod Ean) ", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.strCodigoEan, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.strCodigoEan, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Quantidade, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Quantidade, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Quantidade, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" value="Coletar Produto" id="coletar" class="btn btn-default" onclick="submitColeta()"/>
+                </div>
+            </div>
+
+        </div>
+    }
+
+    <br />
+
+    <div>
+        @Html.ActionLink("Voltar", "../Menus/ExibirGrupoMenu", new { id = 1 }, new { @class = "voltar-image" })
+       
+    </div>
+</body>
+
+</html>

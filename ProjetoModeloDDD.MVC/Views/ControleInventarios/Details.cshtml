@@ -1,0 +1,98 @@
+﻿@model ProjetoModeloDDD.MVC.ViewModels.Inventario.ControleInventarioViewModel
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Controle Inventário</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataFim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataFim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoLoja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoLoja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroLoja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroLoja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contagem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FaixaIdentificadorInicial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FaixaIdentificadorInicial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FaixaIdentificadorFianl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FaixaIdentificadorFianl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observacoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observacoes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ControleInventarioId }) |
+    @Html.ActionLink("Listar", "Index")
+</p>

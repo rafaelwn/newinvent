@@ -1,0 +1,74 @@
+﻿@model ProjetoModeloDDD.MVC.ViewModels.MenuViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MenuViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MenuId_Pai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MenuId_Pai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MenuId_Filho)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MenuId_Filho)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CaminhoImagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CaminhoImagem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Link)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Link)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Situacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Situacao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MenuId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

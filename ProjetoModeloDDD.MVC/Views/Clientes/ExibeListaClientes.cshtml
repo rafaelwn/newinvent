@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "ExibeListaClientes";
+}
+
+
+<h2>Exibe Lista Clientes</h2>
+
+<div id="JobTable" />
+
+<script type="text/javascript">
+
+        $(document).ready(function () {
+
+
+            //Localization texts
+            var ptbrMessages = {
+                serverCommunicationError: 'Falha de conexão com o servidor.',
+                loadingMessage: 'Aguarde carregando...',
+                noDataAvailable: 'Nenhum registro localizado!',
+                addNewRecord: '+ Adicionar novo registro',
+                editRecord: 'editar registro',
+                areYouSure: 'Tem certeza?',
+                deleteConfirmation: 'Tem certeza que deseja excluir?',
+                save: 'Salvar',
+                saving: 'Salvando',
+                cancel: 'Cancelar',
+                deleteText: 'Deletar',
+                deleting: 'Deletando',
+                error: 'Erro',
+                close: 'Fechar',
+                cannotLoadOptionsFor: ' opção não pode ser carregada para o {0} ',
+                pagingInfo: ' Mostrando {0} a {1} de {2} registro(s) ',
+                canNotDeletedRecords: '{1} o registro {0} não pode ser deletado!',
+                deleteProggress: '{1} processo {0} deletando...'
+            };
+
+            //Prepare jtable plugin
+            $('#JobTable').jtable({
+                title: '',
+                paging: true,
+                pageSize: 10,
+                sorting: true,
+                defaultSorting: 'Nome ASC',
+                messages: ptbrMessages,
+                actions: {
+                    listAction: '@Url.Action("ListarClientes")'
+                },
+                fields: {
+                    ClienteId: {
+                        key: true,
+                        create: false,
+                        edit: false,
+                        list: false
+                    },
+                    Nome: {
+                        title: 'Nome',
+                        width: '30%'
+                    },
+                    Sobrenome: {
+                        title: 'Sobrenome',
+                        width: '25%'
+                    },
+                    Ativo: {
+                        title: 'Ativo',
+                        width: '15%',
+                        type: 'checkbox',
+                        values: { 'false': 'Inativo', 'true': 'Ativo' },
+                        defaultValue: 'false'
+                    },
+                    DataCadastro: {
+                        title: 'Data Cadastro',
+                        width: '15%',
+                        type: 'date',
+                        displayFormat: 'yy-mm-dd'
+                    }
+                }
+            });
+
+            //Load Job list from server
+            $('#JobTable').jtable('load');
+
+        });
+
+</script>
+

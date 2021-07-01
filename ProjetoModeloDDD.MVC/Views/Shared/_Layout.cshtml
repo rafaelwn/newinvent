@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - New Invent </title>
+    <meta http-equiv="PRAGMA" content="NO-CACHE">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    @Scripts.Render("~/Scripts/jquery-1.10.2.min.js")
+    @Scripts.Render("~/Scripts/modernizr-2.6.2.js")
+    @Scripts.Render("~/Scripts/jquery-ui.min.js")
+
+    @Scripts.Render("~/Scripts/validationEngine/jquery.validationEngine.js")
+
+    <link rel="stylesheet" href="~/web/css/style.css?v=1.1">
+
+
+    @Styles.Render("~/Content/css")
+    
+
+    <!-- *** jTable *** -->
+
+ 
+
+
+    <!-- *** Gridmvc *** -->
+    
+
+    
+    <!-- ***  - TEMPLATE *** -->
+
+    <!-- Custom Theme files -->
+    @Styles.Render("~/web/css/style.css")
+    <!-- Custom Theme files -->
+    <!---- start-smoth-scrolling---->
+    @Scripts.Render("~/web/js/move-top.js")
+    @Scripts.Render("~/web/js/easing.js")
+    <script type="text/javascript">
+            jQuery(document).ready(function ($) {
+                $(".scroll").click(function (event) {
+                    event.preventDefault();
+                    $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+                });
+            });
+    </script>
+    <!---- start-smoth-scrolling---->
+
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+    <!----webfonts--->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+    <!---//webfonts--->
+    <!----start-top-nav-script---->
+    <script>
+            $(function () {
+                var pull = $('#pull');
+                var menu = $('nav ul');
+                var menuHeight = menu.height();
+                $(pull).on('click', function (e) {
+                    e.preventDefault();
+                    menu.slideToggle();
+                });
+                $(window).resize(function () {
+                    var w = $(window).width();
+                    if (w > 320 && menu.is(':hidden')) {
+                        menu.removeAttr('style');
+                    }
+                });
+            });
+    </script>
+    <!----//End-top-nav-script---->
+    <!-- *** FIM    - TEMPLATE *** -->
+
+</head>
+<body onunload="window.opener.location.reload()">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("New Invent", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Menu Principal", "../Menus/ExibirGrupoMenu", new { id = 1 })</li>
+
+                    <li>@Html.ActionLink("Sair", "LogOff", "Account")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+
+        @RenderBody()
+        <hr />
+
+        <footer>
+
+            <!---footer--->
+            <div class="navbar navbar-inverse navbar-fixed-bottom">
+
+                <div class="container">
+
+                    <div class="footer-right">
+                        <p align="right" style="color:white">
+                            <!-- Template by <a href="#">W3layouts</a> -->
+                            <br />
+                            Usuário: @Context.User.Identity.Name
+                        </p>
+                        <script type="text/javascript">
+                            $(document).ready(function () {
+                                /*
+                                        var defaults = {
+                                            containerID: 'toTop', // fading element id
+                                            containerHoverID: 'toTopHover', // fading element hover id
+                                            scrollSpeed: 1200,
+                                            easingType: 'linear'
+                                        };
+                                        */
+
+                                $().UItoTop({ easingType: 'easeOutQuart' });
+
+                            });
+                        </script>
+                        <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="-ms-opacity: 1; opacity: 1;"> </span></a>
+                    </div>
+                    <div class="clearfix"> </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+        <!---//footer--->
+
+    </div>
+
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿@model ProjetoModeloDDD.MVC.ViewModels.Inventario.ItemControleInventarioViewModel
+
+@{
+    ViewBag.Title = "Create v.1.1";
+}
+
+
+@using (Html.BeginForm("Create", "ItensControleInventarios", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        Última Coleta <br />
+        Produto: <b> @ViewBag.DescricaoProduto</b> <br />
+        Quantidade: <b> @ViewBag.QuantidadeColeta </b><br />
+        <br />
+        v.1.1
+        <div class="form-group">
+            @Html.LabelFor(model => model.Identificador, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Identificador, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Identificador, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <form>
+                    @Html.Label("Digitado", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <input type="radio" value="Digitado" name="Opcao" class="form-control" />
+                    @Html.Label("Auto", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <input type="radio" value="Auto" name="Opcao" class="form-control" />
+                </form>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Quantidade Padrão", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.Editor("QuantidadePadrao", new { htmlAttributes = new { @class = "form-control" } })
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Código Ean", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.strCodigoEan, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.strCodigoEan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Quantidade, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Quantidade, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Quantidade, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Adicionar Coleta" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

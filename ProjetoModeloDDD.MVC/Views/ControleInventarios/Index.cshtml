@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.Inventario.ControleInventarioViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<script type="text/javascript">
+
+    $(window).load(function () {
+        $('#loading').hide();        
+        
+    });
+
+    function pesquisar() {
+        $('#loading').show();
+        var url = '@Url.Action("Filter")';
+
+        $.get(url, { ControleInventarioId: $("#ControleInventarioId").val() }, function (result) {
+            $('#ciViewGrid').html(result);
+            $('#loading').hide();
+        });
+
+    }
+
+    function iniciarInventario() {
+        var url = "../ControleInventarios/Create";
+        window.location.assign(url);
+    }
+
+    
+</script>
+
+<br />
+<h2>Inventários</h2>
+<br />
+
+<div id="loading">
+    <img id="loading-image" src="~/images/ajax-loader.gif" alt="Carregando..." />
+</div>
+
+<table>
+    <tr>
+        <td>
+            Controle Inventário Id:
+            @Html.TextBox("ControleInventarioId")
+            <input type="button" value="Pesquisar" id="btnpesquisar" onclick="pesquisar()" />
+            <input type="button" value="Iniciar Novo Inventário" id="btnIniciar" onclick="iniciarInventario()" />
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="ciViewGrid">
+                @Html.Partial("Filter", Model)
+            </div>
+        </td>
+    </tr>
+</table>
+
+<br />
+
+@Html.ActionLink("Voltar", "../Menus/ExibirGrupoMenu", new { id = 1 }, new { @class = "voltar-image" })

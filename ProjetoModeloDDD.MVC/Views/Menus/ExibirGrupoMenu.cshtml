@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.MenuViewModel>
+
+@{
+    ViewBag.Title = "ExibirGrupoMenu";
+}
+<center>
+    <img src="~/images/inventario/new_invent.png" width="100px" height="50px" /> <br />
+</center>
+
+<br />
+
+<table class="table">
+@foreach (var item in Model) {
+    <tr>
+        <td>
+
+            @Html.DisplayFor(modelItem => item.Descricao) <br />
+
+            <img src="@Html.DisplayFor(modelItem => item.CaminhoImagem)" alt="Image" />
+
+            @Html.ActionLink(item.Titulo, "Index", item.Link)
+        </td>
+    </tr> 
+}
+</table>

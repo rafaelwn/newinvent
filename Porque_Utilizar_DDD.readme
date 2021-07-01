@@ -1,0 +1,37 @@
+Arquitetura de Sistemas Corporativos é um tema muito menos explorado do que ASP.NET MVC 5 e nem por isso é menos importante (na verdade é bem mais), neste vídeo tutorial eu mostrarei como criar uma arquitetura padrão DDD utilizando ASP.NET MVC 5.2, Entity Framework, AutoMapper, IoC com Ninject e muitas dicas para criar uma arquitetura modelo e totalmente responsável.
+
+
+Como poderão acompanhar nos slides e no vídeo ASP.NET MVC é apenas a ponta do iceberg em uma aplicação corporativa. Quando entramos no mundo real os exemplos dos artigos de sites e livros não nos atendem mais e é necessário buscar mais conhecimento para criar uma aplicação robusta, responsável, testável, escalável e de fácil manutenção.
+
+O modelo DDD (Domain Driven Design) atende muito bem cenários de aplicações corporativas e eu utilizo muito em meus projetos profissionais e pessoais.
+
+Neste vídeo tutorial você aprenderá
+
+Criar uma solução padrão DDD
+Separar a aplicação em camadas
+Entidades de Domínio
+Classes de Serviço
+Criar Contratos (Interfaces)
+Repositório Genérico
+Repositório Especializado
+Criar um Contexto do Entity Framework
+Trabalhar com Migrations
+Criar novas convenções do Entity Framework
+Remover algumas convenções do Entity Framework
+Sobrescrever o método SaveChanges para persistência de dados
+Programar com CodeFirst
+Utilizar FluentAPI para modelar tabelas
+Criar Relacionamentos entre Entidades e refletindo nas tabelas do banco de dados.
+Criar e utilizar a camada de Application
+Trabalhar com classes genéricas de Entidades
+Abstrair camadas com Injeção de Dependência (IoC)
+Implementar o Ninject como container de IoC (DI)
+Utilizar ViewModels
+Utilizar DataAnnotations para validação de formulários
+Mapear ViewModels x Entidade de Domínio com AutoMapper
+Muitas dicas para acelerar sua produção
+Este conteúdo é aplicado no meu curso de ASP.NET MVC 5 – Enterprise Applications com uma carga horária de 16 horas, com todo o embasamento teórico, técnico e prático, muitos outros patterns, testes, mocks, serviços REST, manipulação de filtros do ASP.NET MVC e etc são abordados no curso para uma preparação completa do futuro arquiteto desenvolvedor.
+
+
+Continua em:
+http://eduardopires.net.br/2014/10/tutorial-asp-net-mvc-5-ddd-ef-automapper-ioc-dicas-e-truques/

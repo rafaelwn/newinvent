@@ -1,0 +1,62 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+#loading {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  display: block;
+  opacity: 0.7;
+  background-color: #fff;
+  z-index: 99;
+  text-align: center;
+}
+
+#loading-image {
+  position: absolute;
+  top: 330px;
+  left: 450px;
+  z-index: 100;
+}
+
+a.voltar-image
+{
+    background: url(../Images/png/account-logout-3x.png) no-repeat top left;
+     display: block;
+     width: 30px;
+     height: 30px;
+     text-indent: -9999px; /* hides the link text */
+}
+
+a.menu-logo-image
+{
+    background: url(../images/inventario/new_invent.png) no-repeat top left;
+     display: block;
+     width: 320px;
+     height: 130px;
+     text-indent: -9999px; /* hides the link text */
+}

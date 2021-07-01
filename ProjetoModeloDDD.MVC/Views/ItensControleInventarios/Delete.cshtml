@@ -1,0 +1,122 @@
+﻿@model ProjetoModeloDDD.MVC.ViewModels.Inventario.ItemControleInventarioViewModel
+
+@{
+    ViewBag.Title = "Deletar";
+}
+
+<h2>@ViewBag.Mensagem</h2>
+
+<h2>Deletar</h2>
+
+<h3>Deseja realmente deletar?</h3>
+<div>
+    <h4>Itens Controle Inventário</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartamentoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartamentoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecaoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecaoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GrupoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GrupoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubGrupoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubGrupoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contagem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ControleInventarioId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ControleInventarioId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProdutoImportacaoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProdutoImportacaoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdentificadorInicial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdentificadorInicial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdentificadorFinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdentificadorFinal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantidadeInicial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantidadeInicial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantidadeFinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantidadeFinal)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+           
+        </div>
+    }
+</div>

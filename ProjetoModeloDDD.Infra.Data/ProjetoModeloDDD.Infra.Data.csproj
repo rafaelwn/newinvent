@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1DA642F-62F8-4C61-90EC-DEDA17DFACB7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjetoModeloDDD.Infra.Data</RootNamespace>
+    <AssemblyName>ProjetoModeloDDD.Infra.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contexto\ProjetoModeloContext.cs" />
+    <Compile Include="EntityConfig\Acesso\GrupoConfiguration.cs" />
+    <Compile Include="EntityConfig\Acesso\PerfilGrupoConfiguration.cs" />
+    <Compile Include="EntityConfig\Acesso\PerfilUsuarioConfiguration.cs" />
+    <Compile Include="EntityConfig\ClienteConfiguration.cs" />
+    <Compile Include="EntityConfig\Inventario\ConfiguracaoConfiguration.cs" />
+    <Compile Include="EntityConfig\Inventario\ControleInventarioConfiguration.cs" />
+    <Compile Include="EntityConfig\Inventario\ItemControleInventarioConfiguration.cs" />
+    <Compile Include="EntityConfig\Inventario\LayoutImportacaoConfiguration.cs" />
+    <Compile Include="EntityConfig\Inventario\ProdutoImportacaoConfiguration.cs" />
+    <Compile Include="EntityConfig\Inventario\RelatorioFinalConfiguration.cs" />
+    <Compile Include="EntityConfig\ItemPedidoVendaConfiguration.cs" />
+    <Compile Include="EntityConfig\MenuConfiguration.cs" />
+    <Compile Include="EntityConfig\PedidoVendaConfiguration.cs" />
+    <Compile Include="EntityConfig\ProdutoConfiguration.cs" />
+    <Compile Include="EntityConfig\TipoPagamentoConfiguration.cs" />
+    <Compile Include="EntityConfig\TipoPagamentoPedidoVendaConfiguration.cs" />
+    <Compile Include="Migrations\201412172344196_ProjetoModeloDDD.cs" />
+    <Compile Include="Migrations\201412172344196_ProjetoModeloDDD.Designer.cs">
+      <DependentUpon>201412172344196_ProjetoModeloDDD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502271708176_migracao001.cs" />
+    <Compile Include="Migrations\201502271708176_migracao001.Designer.cs">
+      <DependentUpon>201502271708176_migracao001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502271741288_migracao002.cs" />
+    <Compile Include="Migrations\201502271741288_migracao002.Designer.cs">
+      <DependentUpon>201502271741288_migracao002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502271742268_migracao0021.cs" />
+    <Compile Include="Migrations\201502271742268_migracao0021.Designer.cs">
+      <DependentUpon>201502271742268_migracao0021.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503141427529_migracao_20150314.cs" />
+    <Compile Include="Migrations\201503141427529_migracao_20150314.Designer.cs">
+      <DependentUpon>201503141427529_migracao_20150314.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503202001191_AddNewInvent_20150320.cs" />
+    <Compile Include="Migrations\201503202001191_AddNewInvent_20150320.Designer.cs">
+      <DependentUpon>201503202001191_AddNewInvent_20150320.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Acesso\GrupoRepository.cs" />
+    <Compile Include="Repositories\Acesso\PerfilGrupoRepository.cs" />
+    <Compile Include="Repositories\Acesso\PerfilUsuarioRepository.cs" />
+    <Compile Include="Repositories\ClienteRepository.cs" />
+    <Compile Include="Repositories\Inventario\ConfiguracaoRepository.cs" />
+    <Compile Include="Repositories\Inventario\ControleInventarioRepository.cs" />
+    <Compile Include="Repositories\Inventario\ItemControleInventarioRepository.cs" />
+    <Compile Include="Repositories\Inventario\LayoutImportacaoRepository.cs" />
+    <Compile Include="Repositories\Inventario\ProdutoImportacaoRepository.cs" />
+    <Compile Include="Repositories\Inventario\RelatorioFinalRepository.cs" />
+    <Compile Include="Repositories\ItemPedidoVendaRepository.cs" />
+    <Compile Include="Repositories\MenuRepository.cs" />
+    <Compile Include="Repositories\PedidoVendaRepository.cs" />
+    <Compile Include="Repositories\ProdutoRepository.cs" />
+    <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\TipoPagamentoPedidoVendaRepository.cs" />
+    <Compile Include="Repositories\TipoPagamentoRepository.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ProjetoModeloDDD.Domain\ProjetoModeloDDD.Domain.csproj">
+      <Project>{a256682b-5671-4c67-adee-3824024e3fcb}</Project>
+      <Name>ProjetoModeloDDD.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201412172344196_ProjetoModeloDDD.resx">
+      <DependentUpon>201412172344196_ProjetoModeloDDD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502271708176_migracao001.resx">
+      <DependentUpon>201502271708176_migracao001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502271741288_migracao002.resx">
+      <DependentUpon>201502271741288_migracao002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502271742268_migracao0021.resx">
+      <DependentUpon>201502271742268_migracao0021.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503141427529_migracao_20150314.resx">
+      <DependentUpon>201503141427529_migracao_20150314.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503202001191_AddNewInvent_20150320.resx">
+      <DependentUpon>201503202001191_AddNewInvent_20150320.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

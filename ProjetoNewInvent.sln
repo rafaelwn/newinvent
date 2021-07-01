@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{597FD648-6253-4D27-B61B-1D9932EB1295}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Services", "1 - Services", "{E7ED3EC7-2E5F-4B9B-9611-61C0B6E86AFD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{B08A1507-2C39-404D-B3A3-472A74AB471A}"
+	ProjectSection(SolutionItems) = preProject
+		Porque_Utilizar_Application.readme = Porque_Utilizar_Application.readme
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{42AB9B55-AEDF-42E4-982A-97A8DB9A24AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{EB776259-CFFD-44FB-A068-869E7ED186AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{D6528A31-7661-4A4C-866A-BF113517A5E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{BF295A4B-0077-4B50-8CAC-63C8DFF38C0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoModeloDDD.Domain", "ProjetoModeloDDD.Domain\ProjetoModeloDDD.Domain.csproj", "{A256682B-5671-4C67-ADEE-3824024E3FCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoModeloDDD.Infra.Data", "ProjetoModeloDDD.Infra.Data\ProjetoModeloDDD.Infra.Data.csproj", "{A1DA642F-62F8-4C61-90EC-DEDA17DFACB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoModeloDDD.Application", "ProjetoModeloDDD.Application\ProjetoModeloDDD.Application.csproj", "{3686AA3F-8467-4524-BF6E-904378EF740A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoModeloDDD.MVC", "ProjetoModeloDDD.MVC\ProjetoModeloDDD.MVC.csproj", "{B08143E7-A5B6-4FE5-910C-9F59DCF13BAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Porque_Utilizar_DDD", "Porque_Utilizar_DDD", "{665F02C0-ECA8-4D79-977D-2A522E92BD9D}"
+	ProjectSection(SolutionItems) = preProject
+		Porque_Utilizar_DDD.readme = Porque_Utilizar_DDD.readme
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://rwntecnologia.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ProjetoModeloDDD.Application\\ProjetoModeloDDD.Application.csproj
+		SccProjectTopLevelParentUniqueName1 = ProjetoNewInvent.sln
+		SccProjectName1 = ProjetoModeloDDD.Application
+		SccLocalPath1 = ProjetoModeloDDD.Application
+		SccProjectUniqueName2 = ProjetoModeloDDD.Domain\\ProjetoModeloDDD.Domain.csproj
+		SccProjectTopLevelParentUniqueName2 = ProjetoNewInvent.sln
+		SccProjectName2 = ProjetoModeloDDD.Domain
+		SccLocalPath2 = ProjetoModeloDDD.Domain
+		SccProjectUniqueName3 = ProjetoModeloDDD.Infra.Data\\ProjetoModeloDDD.Infra.Data.csproj
+		SccProjectTopLevelParentUniqueName3 = ProjetoNewInvent.sln
+		SccProjectName3 = ProjetoModeloDDD.Infra.Data
+		SccLocalPath3 = ProjetoModeloDDD.Infra.Data
+		SccProjectUniqueName4 = ProjetoModeloDDD.MVC\\ProjetoModeloDDD.MVC.csproj
+		SccProjectTopLevelParentUniqueName4 = ProjetoNewInvent.sln
+		SccProjectName4 = ProjetoModeloDDD.MVC
+		SccLocalPath4 = ProjetoModeloDDD.MVC
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A256682B-5671-4C67-ADEE-3824024E3FCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A256682B-5671-4C67-ADEE-3824024E3FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A256682B-5671-4C67-ADEE-3824024E3FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A256682B-5671-4C67-ADEE-3824024E3FCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1DA642F-62F8-4C61-90EC-DEDA17DFACB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1DA642F-62F8-4C61-90EC-DEDA17DFACB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1DA642F-62F8-4C61-90EC-DEDA17DFACB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1DA642F-62F8-4C61-90EC-DEDA17DFACB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3686AA3F-8467-4524-BF6E-904378EF740A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3686AA3F-8467-4524-BF6E-904378EF740A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3686AA3F-8467-4524-BF6E-904378EF740A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3686AA3F-8467-4524-BF6E-904378EF740A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B08143E7-A5B6-4FE5-910C-9F59DCF13BAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B08143E7-A5B6-4FE5-910C-9F59DCF13BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B08143E7-A5B6-4FE5-910C-9F59DCF13BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B08143E7-A5B6-4FE5-910C-9F59DCF13BAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D6528A31-7661-4A4C-866A-BF113517A5E0} = {EB776259-CFFD-44FB-A068-869E7ED186AA}
+		{BF295A4B-0077-4B50-8CAC-63C8DFF38C0C} = {EB776259-CFFD-44FB-A068-869E7ED186AA}
+		{A256682B-5671-4C67-ADEE-3824024E3FCB} = {42AB9B55-AEDF-42E4-982A-97A8DB9A24AF}
+		{A1DA642F-62F8-4C61-90EC-DEDA17DFACB7} = {D6528A31-7661-4A4C-866A-BF113517A5E0}
+		{3686AA3F-8467-4524-BF6E-904378EF740A} = {B08A1507-2C39-404D-B3A3-472A74AB471A}
+		{B08143E7-A5B6-4FE5-910C-9F59DCF13BAC} = {597FD648-6253-4D27-B61B-1D9932EB1295}
+	EndGlobalSection
+EndGlobal

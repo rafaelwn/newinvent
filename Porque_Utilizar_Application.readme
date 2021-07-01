@@ -1,0 +1,24 @@
+
+Introduzindo a camada de aplicação
+
+Olá, pessoal
+
+Neste novo artigo sobre arquitetura de software, falarei sobre a camada de aplicação, suas principais características e alguns pontos a considerar para utilizá-la ou não.
+
+Caso não tenha lido o <<artigo anterior sobre camadas>>, recomendo fortemente a leitura do mesmo para contextualizá-lo melhor.
+
+Lido? Então vamos começar…
+
+O QUE É
+
+A camada de aplicação (Application Layer) fornece um conjunto de serviços de aplicação (application services), os quais expressam as user stories (ou use cases) do software.
+
+De modo simples, um serviço de aplicação recebe dados de seus clientes, como a interface de usuário, trata esses dados se necessário e chama um objeto do domínio para executar a operação de negócio.
+
+Ele pode ainda fazer o controle de transação e tratar do controle de acesso do software, além de poder enviar notificações para outros softwares. Sendo assim, ele é um grande coordenador da operação de negócio a ser realizada pelo software e um cliente direto dos objetos de domínio.
+
+(A camada de aplicação também é conhecida por camada de serviço (Service Layer), como mostrada no clássico livro Patterns of Enterprise Application Architecture do Martin Fowler.)
+
+Continua em:
+http://robsoncastilho.com.br/2014/04/16/introduzindo-a-camada-de-aplicacao/
+

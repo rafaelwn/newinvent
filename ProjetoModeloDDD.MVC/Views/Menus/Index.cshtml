@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.MenuViewModel>
+
+@{
+    ViewBag.Title = "Adm Menus";
+}
+
+<h2>Adm Menus</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MenuId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MenuId_Pai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MenuId_Filho)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CaminhoImagem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Link)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Situacao)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MenuId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MenuId_Pai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MenuId_Filho)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaminhoImagem)
+        </td>
+        <td>
+           @Html.ActionLink(item.Titulo, "Index", item.Link)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.MenuId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.MenuId }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.MenuId })
+        </td>
+    </tr>
+}
+
+</table>
+
+@Html.ActionLink("Voltar", "../Menus/ExibirGrupoMenu", new { id = 1 }, new { @class = "voltar-image" })

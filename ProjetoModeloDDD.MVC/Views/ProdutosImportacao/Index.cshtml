@@ -1,0 +1,79 @@
+﻿@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.Inventario.ProdutoImportacaoViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<script type="text/javascript">
+
+    $(window).load(function () {
+        $('#loading').hide();
+    });
+
+    function pesquisar() {
+        $('#loading').show();
+        var url = '@Url.Action("Filter")';
+        $.get(url, { CodigoEan: $("#CodigoEan").val() }, function (result) {
+            $('#ProdutoViewGrid').html(result);
+            $('#loading').hide();
+        });
+
+    }
+
+    function importarProdutos() {
+        var r = confirm("Todos os registros de coletas anteriores serão excluidos antes da importação. Deseja continuar?");
+        if (r == true) {
+            $("form").submit();
+        }
+    }
+
+</script>
+
+<br />
+
+
+
+<div id="loading">
+    <img id="loading-image" src="~/images/ajax-loader.gif" alt="Carregando..." />
+</div>
+
+<h2>Importação</h2>
+
+    <table>
+        <tr>
+            <td>
+                <br />
+                @Html.Encode(ViewData["Message"]) 
+                <br /><br />
+                @Html.Label("Selecione o arquivo para importação:")
+
+                @using (Html.BeginForm("FileUpload", "ProdutosImportacao", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <input type="file" name="UploadedFile" /><input type="button" name="Importar" value="Importar" onclick="importarProdutos()">
+                }
+            </td>
+        </tr>
+    </table>
+    <br />
+    <br />  
+
+    <table>
+        <tr>
+            <td>
+                @Html.Label("Código Ean:")
+                @Html.TextBox("CodigoEan")
+                <input type="button" value="Pesquisar" id="btnpesquisar" onclick="pesquisar()" />
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="ProdutoViewGrid">
+                    @Html.Partial("Filter", Model)
+                </div>
+            </td>
+        </tr>
+    </table>
+<br />
+
+@Html.ActionLink("Voltar", "../Menus/ExibirGrupoMenu", new { id = 1 }, new { @class = "voltar-image" })

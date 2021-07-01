@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.Inventario.ConfiguracaoViewModel>
+
+@{
+    ViewBag.Title = "Configurações";
+}
+
+<h2>Configurações</h2>
+
+<p>
+    @Html.ActionLink("Adicionar Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Caminho Arquivo Importação
+        </th>
+        <th>
+           Caminho Arquivo Exportação
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaminhoArquivoImportacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CaminhoArquivoExportacao)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.ConfiguracaoId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.ConfiguracaoId }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.ConfiguracaoId })
+        </td>
+    </tr>
+}
+
+</table>
+
+@Html.ActionLink("Voltar", "../Menus/ExibirGrupoMenu", new { id = 1 }, new { @class = "voltar-image" })

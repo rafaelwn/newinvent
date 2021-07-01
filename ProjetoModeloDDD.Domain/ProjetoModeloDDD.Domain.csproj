@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A256682B-5671-4C67-ADEE-3824024E3FCB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjetoModeloDDD.Domain</RootNamespace>
+    <AssemblyName>ProjetoModeloDDD.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Acesso\Grupo.cs" />
+    <Compile Include="Entities\Acesso\PerfilGrupo.cs" />
+    <Compile Include="Entities\Acesso\PerfilUsuario.cs" />
+    <Compile Include="Entities\Cliente.cs" />
+    <Compile Include="Entities\Inventario\Configuracao.cs" />
+    <Compile Include="Entities\Inventario\ControleInventario.cs" />
+    <Compile Include="Entities\Inventario\ItemControleInventario.cs" />
+    <Compile Include="Entities\Inventario\LayoutImportacao.cs" />
+    <Compile Include="Entities\Inventario\ProdutoImportacao.cs" />
+    <Compile Include="Entities\Inventario\RelatorioFinal.cs" />
+    <Compile Include="Entities\ItemPedidoVenda.cs" />
+    <Compile Include="Entities\Menu.cs" />
+    <Compile Include="Entities\PedidoVenda.cs" />
+    <Compile Include="Entities\Produto.cs" />
+    <Compile Include="Entities\TipoPagamento.cs" />
+    <Compile Include="Entities\TipoPagamentoPedidoVenda.cs" />
+    <Compile Include="Interfaces\Repositories\Acesso\IGrupoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\Acesso\IPerfilUsuarioRepository.cs" />
+    <Compile Include="Interfaces\Repositories\Inventario\IConfiguracaoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\Inventario\IControleInventarioRepository.cs" />
+    <Compile Include="Interfaces\Repositories\Inventario\IItemControleInventarioRepository.cs" />
+    <Compile Include="Interfaces\Repositories\Inventario\ILayoutImportacaoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\Acesso\IPerfilGrupoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\Inventario\IProdutoImportacaoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\Inventario\IRelatorioFinalRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IPedidoVendaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IClienteRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IItemPedidoVendaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IMenuRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IProdutoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\Repositories\ITipoPagamentoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ITipoPagamentoPedidoVendaRepository.cs" />
+    <Compile Include="Interfaces\Services\Acesso\IGrupoService.cs" />
+    <Compile Include="Interfaces\Services\Acesso\IPerfilGrupoService.cs" />
+    <Compile Include="Interfaces\Services\Acesso\IPerfilUsuarioService.cs" />
+    <Compile Include="Interfaces\Services\IClienteService.cs" />
+    <Compile Include="Interfaces\Services\IItemPedidoVendaService.cs" />
+    <Compile Include="Interfaces\Services\IMenuSevice.cs" />
+    <Compile Include="Interfaces\Services\Inventario\IConfiguracaoService.cs" />
+    <Compile Include="Interfaces\Services\Inventario\IControleInventarioService.cs" />
+    <Compile Include="Interfaces\Services\Inventario\IItemControleInventarioService.cs" />
+    <Compile Include="Interfaces\Services\Inventario\ILayoutImportacaoService.cs" />
+    <Compile Include="Interfaces\Services\Inventario\IProdutoImportacaoService.cs" />
+    <Compile Include="Interfaces\Services\Inventario\IRelatorioFinalService.cs" />
+    <Compile Include="Interfaces\Services\IPedidoVendaService.cs" />
+    <Compile Include="Interfaces\Services\IProdutoService.cs" />
+    <Compile Include="Interfaces\Services\IServiceBase.cs" />
+    <Compile Include="Interfaces\Services\ITipoPagamentoService.cs" />
+    <Compile Include="Interfaces\Services\ITipoPagamentoPedidoVendaService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Acesso\GrupoService.cs" />
+    <Compile Include="Services\Acesso\PerfilGrupoService.cs" />
+    <Compile Include="Services\Acesso\PerfilUsuarioService.cs" />
+    <Compile Include="Services\ClienteService.cs" />
+    <Compile Include="Services\Inventario\ConfiguracaoService.cs" />
+    <Compile Include="Services\Inventario\ControleInventarioService.cs" />
+    <Compile Include="Services\Inventario\ItemControleInventarioService.cs" />
+    <Compile Include="Services\Inventario\LayoutImportacaoService.cs" />
+    <Compile Include="Services\Inventario\ProdutoImportacaoService.cs" />
+    <Compile Include="Services\Inventario\RelatorioFinalService.cs" />
+    <Compile Include="Services\ItemPedidoVendaService.cs" />
+    <Compile Include="Services\MenuService.cs" />
+    <Compile Include="Services\PedidoVendaService.cs" />
+    <Compile Include="Services\ProdutoService.cs" />
+    <Compile Include="Services\ServiceBase.cs" />
+    <Compile Include="Services\TipoPagamentoPedidoVendaService.cs" />
+    <Compile Include="Services\TipoPagamentoService.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Serialization" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

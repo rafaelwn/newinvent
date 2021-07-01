@@ -1,0 +1,104 @@
+﻿@model ProjetoModeloDDD.MVC.ViewModels.Inventario.ControleInventarioViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ControleInventarioViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataFim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataFim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoLoja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoLoja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroLoja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroLoja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contagem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FaixaIdentificadorInicial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FaixaIdentificadorInicial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FaixaIdentificadorFianl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FaixaIdentificadorFianl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observacoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observacoes)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

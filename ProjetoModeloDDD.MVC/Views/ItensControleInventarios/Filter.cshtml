@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.Inventario.ItemControleInventarioViewModel>
+@Styles.Render("~/Content/webgrid_style.css")
+
+<script type="text/javascript">
+    function Details(id) {        
+        window.open("/ItensControleInventarios/Details?id=" + id, "_blank", "toolbar=no, scrollbars=yes, location=no, resizable=yes, top=10, left=500, width=400, height=600");
+    }
+
+    function Edit(id) {        
+        window.open("/ItensControleInventarios/Edit?id=" + id, "_blank", "toolbar=no, scrollbars=yes, location=no, resizable=yes, top=10, left=500, width=400, height=600");
+    }
+
+    function Delete(id) {
+        window.open("/ItensControleInventarios/Delete?id=" + id, "_blank", "toolbar=no, scrollbars=yes, location=no, resizable=yes, top=10, left=500, width=400, height=600");
+    }
+
+    
+</script>
+
+<div style="width:100%" id="grid_ajax">
+    @{
+
+        var grid = new WebGrid(Model, rowsPerPage: 10, ajaxUpdateContainerId: "grid_ajax");
+
+        @grid.GetHtml(
+            tableStyle: "webgrid",
+            fillEmptyRows: false,
+            headerStyle: "webgrid-header",
+            alternatingRowStyle: "webgrid-alternating-row",
+            rowStyle: "webgrid-row-style",
+            footerStyle: "webgrid-footer",
+            mode: WebGridPagerModes.All,
+            firstText: "<< Primeiro",
+            previousText: "< Anterior",
+            nextText: "Próximo >",
+            lastText: "Último >>",
+            columns: new[] {
+            
+            grid.Column("NomeProdutoImp", header: " Produto Import.", style:"webgrid-col-texto"),
+            grid.Column("Contagem", header: " Contagem - ", style:"webgrid-col-centro"),            
+            grid.Column("ItemControleInventarioId", header: " Item Id - ", style:"webgrid-col-centro"),
+            grid.Column("CodigoEan", header: " Código EAN - "),
+            grid.Column("Quantidade", header: " Qtde Coleta - ", style:"webgrid-col-numero"),
+            grid.Column("QuantidadeImp", header: " Qtde Import. - ", style:"webgrid-col-numero"),
+            grid.Column("EmailUsuario", header: " Usuário - "),
+            
+
+            grid.Column("ItemControleInventarioId", header: "Ação", canSort:false,
+                    format: @<text>
+                    @Html.Raw("   <a  onclick='Details(" + item.ItemControleInventarioId + ")' href='' > <img src='/Images/png/eye-3x.png' title='Detalhes'/> </a>")
+                    @Html.Raw("   <a  onclick='Edit(" + item.ItemControleInventarioId + ")' href='' > <img src='/Images/png/pencil-3x.png' title='Edita'/> </a>")
+                    @Html.Raw("   <a  onclick='Delete(" + item.ItemControleInventarioId + ")' href='' > <img src='/Images/png/circle-x-3x.png' title='Deleta'/> </a>")
+                    </text>
+                )
+
+            }
+                 )
+    }
+</div>
+
+<br />
+
+

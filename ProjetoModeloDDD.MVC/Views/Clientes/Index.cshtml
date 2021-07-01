@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.ClienteViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<script type="text/javascript">
+
+    $(window).load(function () {
+        $('#loading').hide();
+    });
+
+    function pesquisar() {
+        $('#loading').show();
+        var url = '@Url.Action("Filter")';
+        $.get(url, { SNome: $("#Nome").val() }, function (result) {            
+            $('#ClienteViewGrid').html(result);
+            $('#loading').hide();
+        });
+
+    }
+
+    function novoCliente() {
+        var url = "/Clientes/Create";
+        window.location.assign(url);
+    }
+
+</script>
+
+<br />
+<h2>Clientes</h2>
+
+<div id="loading">
+    <img id="loading-image" src="~/images/ajax-loader.gif" alt="Carregando..." />
+</div>
+
+<table>
+    <tr>
+        <td>            
+            @Html.TextBox("Nome") 
+            <input type="button" value="Pesquisar" id="btnpesquisar" onclick="pesquisar()" />            
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="ClienteViewGrid">
+                @Html.Partial("Filter", Model)
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p>
+    <div style="padding:7px 0;">
+        <input type="button" value="Incluir Novo Cliente" id="btnNovo" onclick="novoCliente()" />
+    </div>
+</p>
+
+<p>
+    @Html.ActionLink("Clientes Especiais", "Especiais")
+</p>
+

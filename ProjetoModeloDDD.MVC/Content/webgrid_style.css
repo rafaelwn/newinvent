@@ -1,0 +1,89 @@
+﻿.webgrid
+{
+ width: 100%;
+ border: 0px;
+ border-collapse: collapse;
+ white-space:nowrap;
+ }
+
+.des {
+    width:50%;
+}
+
+.webgrid a
+{
+color: #000;
+}
+
+.webgrid-header
+{
+padding: 6px 5px;
+text-align: center;
+background-color: #e8eef4;
+border-bottom: 2px solid #3966A2;
+height: 40px;
+border-top: 2px solid #D6E8FF;
+border-left: 2px solid #D6E8FF;
+border-right: 2px solid #D6E8FF;
+}
+
+.webgrid-footer
+{
+padding: 6px 5px;
+text-align: left;
+background-color: #e8eef4;
+border-top: 2px solid #3966A2;
+height: 30px;
+border-bottom: 2px solid #D6E8FF;
+border-left: 2px solid #D6E8FF;
+border-right: 2px solid #D6E8FF;
+color:blue;
+ }
+
+.webgrid-alternating-row
+{
+height: 30px;
+background-color: #f2f2f2;
+border-bottom: 1px solid #d2d2d2;
+border-left: 2px solid #D6E8FF;
+border-right: 2px solid #D6E8FF;
+font-size:small;
+}
+
+.webgrid-row-style
+{
+height: 30px;
+background-color: #f2f2f2;
+border-bottom: 1px solid #d2d2d2;
+border-left: 2px solid #D6E8FF;
+border-right: 2px solid #D6E8FF;
+font-size:small;
+}
+
+.nome {
+    width: 150px;
+}
+
+.endereco {
+    width: 300px;
+}
+
+.email {
+    width: 300px;
+}
+
+.webgrid-col-data{
+    text-align:center
+}
+
+.webgrid-col-numero{
+    text-align:right
+}
+
+.webgrid-col-texto{
+    text-align:left
+}
+
+.webgrid-col-centro{
+    text-align:center
+}

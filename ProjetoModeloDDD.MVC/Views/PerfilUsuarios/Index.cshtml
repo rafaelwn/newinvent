@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ProjetoModeloDDD.MVC.ViewModels.Acesso.PerfilUsuarioViewModel>
+
+@{
+    ViewBag.Title = "Perfil Usuários";
+}
+
+<h2>Perfil Usuários</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grupo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Grupo.Nome)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.PerfilUsuarioId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.PerfilUsuarioId }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.PerfilUsuarioId })
+        </td>
+    </tr>
+}
+
+</table>
+
+<br />
+
+@Html.ActionLink("Voltar", "../Menus/ExibirGrupoMenu", new { id = 1 }, new { @class = "voltar-image" })
